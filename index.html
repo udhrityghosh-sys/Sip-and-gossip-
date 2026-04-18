@@ -1,251 +1,298 @@
-<!DOCTYPE html>
+<html>
+        <head><title>Downloaded HTML</title></head>
+        <body>
+            <pre style="white-space: pre-wrap; word-wrap: break-word;"><!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sip N Gossip Cafe</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-:root {
-    --bg: #0f0f0f;
-    --text: #ffffff;
-    --accent: #c89b6d;
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
 }
 
-body.light {
-    --bg: #f5f5f5;
-    --text: #000;
+body{
+background:#0f0f0f;
+color:white;
+line-height:1.6;
 }
 
-body {
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    overflow-x: hidden;
+header{
+height:100vh;
+background:url('https://images.unsplash.com/photo-1509042239860-f550ce710b93') center/cover no-repeat;
+position:relative;
+display:flex;
+align-items:flex-end;
+padding:25px;
 }
 
-/* 🌈 FUTURISTIC BACKGROUND */
-.bg {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    overflow: hidden;
+header::before{
+content:'';
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:linear-gradient(to top,rgba(0,0,0,.9),rgba(0,0,0,.3));
 }
 
-.blob {
-    position: absolute;
-    width: 400px;
-    height: 400px;
-    background: radial-gradient(circle, #c89b6d, transparent);
-    filter: blur(100px);
-    animation: move 20s infinite alternate;
+.hero{
+position:relative;
+z-index:2;
+width:100%;
 }
 
-.blob:nth-child(2) {
-    left: 60%;
-    top: 40%;
-    background: radial-gradient(circle, #8b5e3c, transparent);
+.tag{
+display:inline-block;
+background:#d4a373;
+color:#000;
+padding:6px 14px;
+border-radius:30px;
+font-size:12px;
+font-weight:600;
+margin-bottom:12px;
 }
 
-@keyframes move {
-    from { transform: translate(0,0); }
-    to { transform: translate(200px,150px); }
+.hero h1{
+font-size:34px;
+font-weight:700;
+margin-bottom:10px;
 }
 
-/* NAVBAR */
-nav {
-    position: fixed;
-    width: 100%;
-    padding: 20px 40px;
-    display: flex;
-    justify-content: space-between;
-    backdrop-filter: blur(15px);
-    background: rgba(255,255,255,0.05);
+.hero p{
+font-size:15px;
+color:#ddd;
+margin-bottom:18px;
 }
 
-nav a {
-    color: var(--text);
-    margin-left: 20px;
-    text-decoration: none;
+.btn-wrap{
+display:flex;
+gap:10px;
+flex-wrap:wrap;
 }
 
-/* HERO */
-.hero {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+.btn{
+flex:1;
+text-align:center;
+padding:13px;
+border-radius:14px;
+text-decoration:none;
+font-weight:600;
+font-size:14px;
+transition:.3s;
 }
 
-.hero h1 {
-    font-size: 4rem;
-    background: linear-gradient(to right, #c89b6d, #fff);
-    -webkit-background-clip: text;
-    color: transparent;
+.primary{
+background:#d4a373;
+color:#000;
 }
 
-/* SECTIONS */
-.section {
-    padding: 100px 40px;
-    text-align: center;
+.secondary{
+border:1px solid #fff;
+color:#fff;
 }
 
-/* 3D FOOD CARDS */
-.cards {
-    display: flex;
-    gap: 30px;
-    flex-wrap: wrap;
-    justify-content: center;
+section{
+padding:28px 18px;
 }
 
-.food3d {
-    width: 260px;
-    padding: 20px;
-    border-radius: 20px;
-    background: rgba(255,255,255,0.08);
-    backdrop-filter: blur(20px);
-    transform-style: preserve-3d;
-    transition: 0.3s;
+.title{
+font-size:24px;
+margin-bottom:18px;
+font-weight:700;
+color:#d4a373;
 }
 
-.food3d img {
-    width: 100%;
-    border-radius: 15px;
-    transform: translateZ(40px);
+.about-card,.card{
+background:#171717;
+padding:18px;
+border-radius:18px;
+box-shadow:0 8px 25px rgba(0,0,0,.25);
 }
 
-.food3d h3 {
-    transform: translateZ(30px);
+.about-card p{
+color:#ccc;
+font-size:14px;
 }
 
-.food3d p {
-    transform: translateZ(20px);
+.menu-grid{
+display:grid;
+gap:14px;
 }
 
-/* GALLERY */
-.gallery {
-    display: flex;
-    gap: 20px;
-    overflow-x: auto;
+.card h3{
+font-size:18px;
+margin-bottom:6px;
 }
 
-.gallery img {
-    width: 300px;
-    border-radius: 20px;
-    transition: 0.3s;
+.card p{
+font-size:13px;
+color:#bbb;
 }
 
-.gallery img:hover {
-    transform: scale(1.1);
+.price{
+margin-top:8px;
+color:#d4a373;
+font-weight:700;
 }
 
-/* BUTTON */
-.btn {
-    margin-top: 20px;
-    padding: 12px 25px;
-    border-radius: 30px;
-    border: none;
-    background: var(--accent);
-    cursor: pointer;
+.gallery{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:10px;
 }
 
-/* TOGGLE */
-.toggle {
-    cursor: pointer;
+.gallery img{
+width:100%;
+height:140px;
+object-fit:cover;
+border-radius:16px;
+}
+
+.contact-box{
+background:#171717;
+padding:18px;
+border-radius:18px;
+text-align:center;
+}
+
+.contact-box p{
+color:#ccc;
+font-size:14px;
+margin-bottom:8px;
+}
+
+.sticky-bar{
+position:fixed;
+bottom:0;
+left:0;
+width:100%;
+background:#111;
+padding:10px;
+display:flex;
+gap:10px;
+box-shadow:0 -5px 20px rgba(0,0,0,.35);
+}
+
+.sticky-bar a{
+flex:1;
+text-align:center;
+padding:14px;
+border-radius:14px;
+font-size:14px;
+font-weight:700;
+text-decoration:none;
+}
+
+.call{
+background:#d4a373;
+color:#000;
+}
+
+.map{
+background:#222;
+color:#fff;
+border:1px solid #333;
+}
+
+footer{
+text-align:center;
+padding:18px 18px 80px;
+font-size:12px;
+color:#777;
 }
 </style>
 </head>
 
 <body>
 
-<!-- 🌈 BACKGROUND -->
-<div class="bg">
-    <div class="blob"></div>
-    <div class="blob"></div>
+<header>
+<div class="hero">
+<span class="tag">Top Rated Cafe in Siliguri</span>
+<h1>Sip N Gossip Cafe</h1>
+<p>Coffee • Tibetan Food • Good Vibes • Perfect Hangout Spot</p>
+
+<div class="btn-wrap">
+<a href="#menu" class="btn primary">View Menu</a>
+<a href="#visit" class="btn secondary">Visit Us</a>
+</div>
+</div>
+</header>
+
+<section>
+<h2 class="title">About</h2>
+<div class="about-card">
+<p>Welcome to Sip N Gossip Cafe — a cozy café serving rich coffee, delicious Tibetan dishes, and the perfect atmosphere to relax with friends.</p>
+</div>
+</section>
+
+<section id="menu">
+<h2 class="title">Popular Menu</h2>
+
+<div class="menu-grid">
+
+<div class="card">
+<h3>Hot Cappuccino</h3>
+<p>Freshly brewed creamy coffee.</p>
+<div class="price">₹120</div>
 </div>
 
-<!-- NAVBAR -->
-<nav>
-    <h2>Sip N Gossip</h2>
-    <div>
-        <a href="#menu">Menu</a>
-        <a href="#gallery">Gallery</a>
-        <span class="toggle" onclick="toggleMode()">🌙</span>
-    </div>
-</nav>
+<div class="card">
+<h3>Steam Momos</h3>
+<p>Authentic Tibetan style momos.</p>
+<div class="price">₹140</div>
+</div>
 
-<!-- HERO -->
-<section class="hero">
-    <h1>Sip, Relax & Gossip ☕</h1>
-    <p>Next-Gen Café Experience</p>
-    <button class="btn">Explore Menu</button>
+<div class="card">
+<h3>Hakka Noodles</h3>
+<p>Spicy wok tossed noodles.</p>
+<div class="price">₹160</div>
+</div>
+
+<div class="card">
+<h3>Cold Coffee</h3>
+<p>Refreshing chilled coffee shake.</p>
+<div class="price">₹150</div>
+</div>
+
+</div>
 </section>
 
-<!-- MENU -->
-<section class="section" id="menu">
-    <h2>Signature Menu</h2>
-    <div class="cards">
-
-        <div class="food3d">
-            <img src="https://source.unsplash.com/400x300/?momos">
-            <h3>Momos</h3>
-            <p>Juicy dumplings</p>
-        </div>
-
-        <div class="food3d">
-            <img src="https://source.unsplash.com/400x300/?noodles">
-            <h3>Thukpa</h3>
-            <p>Hot noodle soup</p>
-        </div>
-
-        <div class="food3d">
-            <img src="https://source.unsplash.com/400x300/?tea">
-            <h3>Butter Tea</h3>
-            <p>Authentic Himalayan drink</p>
-        </div>
-
-    </div>
+<section>
+<h2 class="title">Gallery</h2>
+<div class="gallery">
+<img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085">
+<img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836">
+<img src="https://images.unsplash.com/photo-1552566626-52f8b828add9">
+<img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4">
+</div>
 </section>
 
-<!-- GALLERY -->
-<section class="section" id="gallery">
-    <h2>Food Experience</h2>
-    <div class="gallery">
-        <img src="https://source.unsplash.com/300x300/?cafe">
-        <img src="https://source.unsplash.com/300x300/?coffee">
-        <img src="https://source.unsplash.com/300x300/?restaurant">
-    </div>
+<section id="visit">
+<h2 class="title">Visit Us</h2>
+<div class="contact-box">
+<p>Near Suryanagar Playground</p>
+<p>Subhas Pally, Siliguri</p>
+<p>Open Daily • Till 11 PM</p>
+</div>
 </section>
 
-<script>
-// DARK MODE
-function toggleMode(){
-    document.body.classList.toggle("light");
-}
+<footer>
+© 2026 Sip N Gossip Cafe • Designed by Udhrity
+</footer>
 
-// 3D CARD INTERACTION
-document.querySelectorAll('.food3d').forEach(card=>{
-    card.addEventListener('mousemove', e=>{
-        let rect = card.getBoundingClientRect();
-        let x = e.clientX - rect.left;
-        let y = e.clientY - rect.top;
-
-        let rotateX = -(y - rect.height/2)/10;
-        let rotateY = (x - rect.width/2)/10;
-
-        card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-    });
-
-    card.addEventListener('mouseleave', ()=>{
-        card.style.transform = "rotateX(0) rotateY(0)";
-    });
-});
-</script>
+<div class="sticky-bar">
+<a href="tel:+91XXXXXXXXXX" class="call">Call Now</a>
+<a href="#" class="map">Directions</a>
+</div>
 
 </body>
-</html> https://notepad.js.org/
+</html></pre>
+        </body>
+    </html>
